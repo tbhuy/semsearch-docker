@@ -10,7 +10,7 @@ LABEL maintainer='Ba Huy Tran <ba-huy.tran@irit.fr>'
 LABEL authors='Ba Huy Tran <ba-huy.tran@irit.fr>'
 ENV PORT 8080
 ENV JAVA_OPTS="-XX:PermSize=2048m -XX:MaxPermSize=2048m -Xms2048m -Xmx2048m"
-RUN ["rm", "-fr", "/usr/local/tomcat/webapps/ROOT/*"]
+RUN ["rm", "-rfv", "/usr/local/tomcat/webapps/ROOT"]
 COPY ./tomcat-users.xml /usr/local/tomcat/conf/
 COPY ep.war /usr/local/
 COPY semsearch.war /usr/local/
